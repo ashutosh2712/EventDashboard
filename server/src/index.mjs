@@ -3,12 +3,14 @@ import mongoose from "mongoose";
 import testRouter from "./routes/test.mjs";
 import registerRouter from "./routes/auth/register.mjs";
 import loginRouter from "./routes/auth/login.mjs";
+import homeRouter from "./routes/home.mjs";
 const app = express();
 
 app.use(express.json());
 app.use(testRouter);
 app.use(registerRouter);
 app.use(loginRouter);
+app.use(homeRouter);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

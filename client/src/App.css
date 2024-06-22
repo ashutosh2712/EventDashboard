@@ -1,42 +1,160 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --color-white: #fff;
+  --color-bg: rgb(69, 67, 67);
+  --color-bg-variant: rgb(88, 88, 88);
+  --color-success: #649568;
+  --color-hacker: #149414;
+  --color-hacker-varint: #9ccc9c;
+  --color-hacker-light: #2b5329;
+  --color-blue: #1e90ff;
+  --color-btn: #000;
+  --border-color: gold;
+  --color-input: rgb(213, 237, 229);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Gruppo", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.card {
-  padding: 2em;
+body {
 }
 
-.read-the-docs {
-  color: #888;
+.authContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 1rem;
+
+  background: url("./assets/hacker.png");
+}
+
+.authFormContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formInput {
+  background: var(--color-hacker-light);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.ToogleLink {
+  color: var(--color-blue);
+}
+
+.btn-cart {
+  background: var(--color-hacker);
+  color: var(--color-white);
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.btn-cart:hover {
+  cursor: pointer;
+  padding: 1.05rem;
+  font-weight: 700;
+}
+
+.navContainer {
+  display: flex;
+  background: var(--color-hacker);
+  color: var(--color-white);
+  align-items: center;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+.navLeft {
+}
+
+.navCenter {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.navSearch {
+  padding: 0.7rem;
+  width: 60vh;
+}
+
+.btn {
+  padding: 1rem;
+  background: var(--color-success);
+  color: var(--color-white);
+  font-weight: 600;
+  border-radius: 0.2rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  padding: 1.05rem;
+  background: var(--color-hacker-varint);
+}
+
+.navRight {
+  display: flex;
+  margin-right: 1rem;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navUser {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.navUser:hover {
+  background: var(--color-hacker-varint);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.hackerFont {
+  color: var(--color-hacker-varint);
+  font-weight: bolder;
+}
+
+.homeContainer {
+  background: url("./assets/hackerPlay.jpg");
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 600;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  background: var(--color-hacker);
+  color: var(--color-white);
 }
