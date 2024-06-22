@@ -4,8 +4,13 @@ import testRouter from "./routes/test.mjs";
 import registerRouter from "./routes/auth/register.mjs";
 import loginRouter from "./routes/auth/login.mjs";
 import homeRouter from "./routes/home.mjs";
+import cors from "cors";
 const app = express();
-
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(express.json());
 app.use(testRouter);
 app.use(registerRouter);
