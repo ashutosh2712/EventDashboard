@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -16,8 +17,11 @@ const Register = () => {
         password,
       });
 
-      localStorage.setItem("token", response.data.token);
-      console.log("User registered:", response.data);
+      if (response.data) {
+        localStorage.setItem("token", response.data.token);
+        console.log("User registered:", response.data);
+      }
+      navigate("/");
     } catch (error) {
       console.log("Error registerin user:", error);
       const errorMessage = "*User already exist!";

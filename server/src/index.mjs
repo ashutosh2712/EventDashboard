@@ -4,6 +4,7 @@ import testRouter from "./routes/test.mjs";
 import registerRouter from "./routes/auth/register.mjs";
 import loginRouter from "./routes/auth/login.mjs";
 import homeRouter from "./routes/home.mjs";
+import eventRouter from "./routes/events.mjs";
 import cors from "cors";
 const app = express();
 app.use(
@@ -16,6 +17,7 @@ app.use(testRouter);
 app.use(registerRouter);
 app.use(loginRouter);
 app.use(homeRouter);
+app.use(eventRouter);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

@@ -27,13 +27,15 @@ router.post("/auth/register", async (request, response) => {
     });
     const savedUser = await newUser.save();
 
-    const token = jwt.sign({ userId: savedUser._id }, jwtsecret, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { userId: savedUser._id, username: savedUser.username },
+      jwtsecret,
+      {
+        expiresIn: "1h",
+      }
+    );
     console.log({ username, email, token });
-    response
-      .status(201)
-      .send({ token, username: savedUser.username, email: savedUser.email });
+    response.json({ token });
   } catch (error) {
     console.log("error:", error);
     response.status(500).send({ error: "Error while registering user:" });

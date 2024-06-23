@@ -20,13 +20,15 @@ router.post("/auth/login", async (request, response) => {
     if (!match) {
       return response.status(400).json({ error: "Incorrect Password" });
     }
-    const token = jwt.sign({ userId: user._id }, jwtsecret, {
-      expiresIn: "1h",
-    });
+    const token = jwt.sign(
+      { userId: user._id, username: user.username },
+      jwtsecret,
+      {
+        expiresIn: "1h",
+      }
+    );
     console.log({ username: user.username, email: user.email, token });
-    response
-      .status(200)
-      .send({ token, username: user.username, email: user.email });
+    response.json({ token });
   } catch (error) {
     response.status(500).json({ error: "Error while Login in!Try again" });
   }
