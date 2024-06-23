@@ -42,11 +42,7 @@ const Navbar = () => {
       </div>
 
       <div className="navCenter">
-        <input
-          type="text"
-          placeholder="Search Your Products"
-          className="navSearch"
-        />
+        <input type="text" placeholder="Search.." className="navSearch" />
         <button type="submit" className="btn">
           SEARCH
         </button>

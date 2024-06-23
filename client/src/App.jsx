@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
+import EventData from "./pages/EventData";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <ProtectedRoute element={Home} />,
       },
+      {
+        path: "/events",
+        element: <ProtectedRoute element={EventData} />,
+      },
+
       {
         path: "/register",
         element: <Register />,

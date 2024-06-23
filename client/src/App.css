@@ -149,7 +149,7 @@ body {
 
 .homeContainer {
   background: url("./assets/hackerPlay.jpg");
-
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -211,4 +211,19 @@ footer {
   align-items: center;
   justify-content: center;
   font-weight: 600;
+}
+
+.returnLink {
+  margin: 1rem 1rem;
+}
+
+.eventContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 600;
+  background: var(--color-hacker-light);
+  padding-bottom: 1rem;
 }
