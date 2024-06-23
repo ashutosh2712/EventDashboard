@@ -76,20 +76,24 @@ const Home = () => {
 
   return (
     <div className="homeContainer">
-      <h1>Record your event here</h1>
-      <div className={`${isRecording ? "btn-play" : "btn-stop"}`}>
-        <button
-          onClick={handleStartStop}
-          className={`${isRecording ? "play" : "stop"}`}
-        >
-          {isRecording ? "Play" : "Stop"}
-        </button>
+      <div className="recordInput">
+        <h1>Record your event here</h1>
+        <div className={`${isRecording ? "btn-play" : "btn-stop"}`}>
+          <button
+            onClick={handleStartStop}
+            className={`${isRecording ? "play" : "stop"}`}
+          >
+            {isRecording ? "Start" : "Stop"}
+          </button>
+        </div>
       </div>
 
-      <h1>View Your Records</h1>
-      <Link to="/events">
-        <button className="btn">Dashboard</button>
-      </Link>
+      <div className="recordInput">
+        <h1>View Your Records</h1>
+        <Link to="/events">
+          <button className="btn">Dashboard</button>
+        </Link>
+      </div>
     </div>
   );
 };

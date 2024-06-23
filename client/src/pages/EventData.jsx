@@ -27,15 +27,20 @@ const EventData = () => {
       <Link to="/" className="returnLink">
         <button className="btn-cart">GO BACK</button>
       </Link>
-      EventData
-      <div>
+
+      <div className="eventDetails">
         <h2>Recorded Events</h2>
-        <ul>
-          {recordedEvents.map((event, index) => (
-            <li key={index}>
-              <strong>{event.type}:</strong> {JSON.stringify(event.data)}
-            </li>
-          ))}
+        <ul className="eventList">
+          {recordedEvents.length > 0 ? (
+            recordedEvents.map((event, index) => (
+              <li key={index}>
+                <strong className="eventName">{event.type}:</strong>{" "}
+                {JSON.stringify(event.data)}
+              </li>
+            ))
+          ) : (
+            <h2 style={{ color: "red" }}> No Data Found</h2>
+          )}
         </ul>
       </div>
     </div>
