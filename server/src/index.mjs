@@ -26,6 +26,6 @@ app.listen(PORT, () => {
 });
 
 mongoose
-  .connect("mongodb://localhost:27017/event_dashboard")
+  .connect("mongodb://localhost:27017/dashboard_event")
   .then(console.log("Connected to mongoDb database!"))
   .catch((err) => console.log(`Error connecting to Db:${err}`));
